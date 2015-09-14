@@ -116,7 +116,44 @@ public class SortingAlgorithms {
 ******************************************************************************/	
 	public static void SelectionSort () {
 		
-		System.out.println("Sorry, Selection Sort could not be found.");
+		boolean Check = true;
+		int Temp;
+		boolean Organized;
+		
+		for (int i = 0; i < ArrayOne.length; i++) {
+			
+			System.out.print(" " + ArrayOne[i]);
+			
+		}
+		
+		System.out.println("\n --------------------------------------"
+				+ "------------------");
+		
+		do {
+			
+			Organized = true;
+			
+			for (int i = 0; i < ArrayOne.length - 1; i++) {
+			
+				
+				
+			}
+				
+				if (Organized == true) {
+					
+					Check = false;
+					
+					
+				}		
+			
+		} while (Check  == true);
+		
+		for (int i = 0; i < ArrayOne.length; i++) {
+			
+			System.out.print(" " + ArrayOne[i]);
+			
+		}
+
 		
 	}
 	
