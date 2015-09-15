@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class SortingAlgorithms {
 
-	public static int[] ArrayOne = new int[20];
+	public static int[] ArrayOne = new int[3];
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -131,20 +131,50 @@ public class SortingAlgorithms {
 		
 		do {
 			
-			Organized = true;
+			//Organized = true;
 			
 			for (int i = 0; i < ArrayOne.length - 1; i++) {
 			
+				int v = 0;
+				int x = i;
 				
+				while(v < ArrayOne.length - 1) {
+				
+					System.out.println("\n X: " + x + " I: " + i + " V: " + v);
+					for (int a = 0; a < ArrayOne.length; a++) {
+						
+						System.out.print(" " + ArrayOne[a]);
+						
+					}
+					
+					if (ArrayOne[x] < ArrayOne[v + 1]) {
+					
+					v += 1;
+					
+					} else {
+						
+					x += 1;
+					v += 1;
+						
+					}
+				
+				}
+				
+				Temp = ArrayOne[i];
+				ArrayOne[i] = ArrayOne[x];
+				ArrayOne[x] = Temp;
 				
 			}
-				
+				/*
 				if (Organized == true) {
 					
 					Check = false;
 					
 					
 				}		
+				*/
+			
+			Check = true;
 			
 		} while (Check  == true);
 		
@@ -168,6 +198,11 @@ public class SortingAlgorithms {
 	public static void InsertionSort () {
 		
 		System.out.println("Sorry, Insertion Sort could not be found.");
+		int v = 1;
+		
+		if (v < 2) {
+			System.out.println("Christ.");
+		}
 		
 	}
 	
