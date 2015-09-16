@@ -115,10 +115,7 @@ public class SortingAlgorithms {
  * Post-Conditions: 				
 ******************************************************************************/	
 	public static void SelectionSort () {
-		
-		boolean Check = true;
-		int Temp;
-		boolean Organized;
+		int Temp = 0;
 		
 		for (int i = 0; i < ArrayOne.length; i++) {
 			
@@ -126,64 +123,44 @@ public class SortingAlgorithms {
 			
 		}
 		
-		System.out.println("\n --------------------------------------"
-				+ "------------------");
+		System.out.println("");
 		
-		do {
-			
-			//Organized = true;
-			
-			for (int i = 0; i < ArrayOne.length - 1; i++) {
-			
-				int v = 0;
-				int x = i;
-				
-				while(v < ArrayOne.length - 1) {
-				
-					System.out.println("\n X: " + x + " I: " + i + " V: " + v);
-					for (int a = 0; a < ArrayOne.length; a++) {
-						
-						System.out.print(" " + ArrayOne[a]);
-						
-					}
-					
-					if (ArrayOne[x] < ArrayOne[v + 1]) {
-					
-					v += 1;
-					
-					} else {
-						
-					x += 1;
-					v += 1;
-						
-					}
-				
-				}
-				
-				Temp = ArrayOne[i];
-				ArrayOne[i] = ArrayOne[x];
-				ArrayOne[x] = Temp;
-				
-			}
-				/*
-				if (Organized == true) {
-					
-					Check = false;
-					
-					
-				}		
-				*/
-			
-			Check = true;
-			
-		} while (Check  == true);
-		
-		for (int i = 0; i < ArrayOne.length; i++) {
-			
-			System.out.print(" " + ArrayOne[i]);
-			
-		}
+		/* a[0] to a[n-1] is the array to sort */
+		int i;
+		int j;
+		int iMin;
 
+		/* advance the position through the entire array */
+		/*   (could do j < n-1 because single element is also min element) */
+		for (j = 0; j < ArrayOne.length-1; j++) {
+		    /* find the min element in the unsorted a[j .. n-1] */
+
+		    /* assume the min is the first element */
+		    iMin = j;
+		    /* test against elements after j to find the smallest */
+		    for (i = j + 1; i < ArrayOne.length; i++) {
+		        /* if this element is less, then it is the new minimum */
+		        if (ArrayOne[i] < ArrayOne[iMin]) {
+		            /* found new minimum; remember its index */
+		            iMin = i;
+		        }
+		    }
+
+		    if(iMin != j) {
+		        ArrayOne[iMin] = Temp;
+		        
+		        ArrayOne[iMin] = ArrayOne[j];
+		        
+		        ArrayOne[j] = Temp;
+		    }
+
+		}
+		
+		for (int i1 = 0; i1 < ArrayOne.length; i1++) {
+			
+			System.out.print(" " + ArrayOne[i1]);
+			
+		}
 		
 	}
 	
