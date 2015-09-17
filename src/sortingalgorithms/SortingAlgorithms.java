@@ -1,20 +1,3 @@
-package sortingalgorithms;
-
-import java.util.Random;
-import java.util.Scanner;
-
-/******************************************************************************
- * Program Filename: 	SortingAlgorithims.java
- * Author: 				Abel, Austin
- * Date: 				September, 2015
- * Description: TEST		
- *  					
- * Input: 				
- * Output: 				
- * TODO: Add Comments
- * ***W.I.P****
-******************************************************************************/
-
 public class SortingAlgorithms {
 
 	public static int[] ArrayOne = new int[3];
@@ -147,11 +130,21 @@ public class SortingAlgorithms {
 		    }
 
 		    if(iMin != j) {
+		        
+		    	//System.out.println(j + " " + Temp + " " + iMin);
+		    	
+		    	Temp = ArrayOne[j];
+		        
+		    	//System.out.println(j + " " + Temp);
+		    	
+		        ArrayOne[j] = ArrayOne[iMin];
+		        
+		       // System.out.println(j + " " + ArrayOne[iMin]);
+		        
 		        ArrayOne[iMin] = Temp;
 		        
-		        ArrayOne[iMin] = ArrayOne[j];
+		        //System.out.println(ArrayOne[iMin] + " " + ArrayOne[Temp] + " " + Temp);
 		        
-		        ArrayOne[j] = Temp;
 		    }
 
 		}
@@ -174,14 +167,42 @@ public class SortingAlgorithms {
 ******************************************************************************/
 	public static void InsertionSort () {
 		
-		System.out.println("Sorry, Insertion Sort could not be found.");
-		int v = 1;
 		
-		if (v < 2) {
-			System.out.println("Christ.");
+			// http://mathbits.com/MathBits/Java/arrays/InsertionSort.html
+		
+		
+		     int j;                     // the number of items sorted so far
+		     int key;                // the item to be inserted
+		     int i;  
+
+		     for (int i1 = 0; i1 < ArrayOne.length; i1++) {
+					
+					System.out.print(" " + ArrayOne[i1]);
+					
+				}
+		     
+		     System.out.println("");
+		     
+		     for (j = 1; j < ArrayOne.length; j++) { // Start with 1 (not 0)
+		    
+		           key = ArrayOne[j];
+		           for(i = j - 1; (i >= 0) && (ArrayOne[i] < key); i--) { // Smaller values are moving up
+		          
+		                 ArrayOne[i+1] = ArrayOne[i];
+		          }
+		         
+		           ArrayOne[i+1] = key;    // Put the key in its proper location
+		     }
+		     
+		     for (int i1 = 0; i1 < ArrayOne.length; i1++) {
+					
+					System.out.print(" " + ArrayOne[i1]);
+					
+				}
+		     
 		}
-		
-	}
+
+		  
 	
 /******************************************************************************
  * Method: 		TryAgain 					
